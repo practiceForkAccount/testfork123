@@ -36,3 +36,6 @@
 
 1. (1)~(8)까지 동일한 작업을 진행하고, 브랜치는 삭제하지 않는다.
 2. push를 진행하기에 앞서 commit 이력도 쌓아본다.
+3. 제대로 진행하고 있다면 나의 repo에서 Fetch upstream에 Fetch and merge 버튼이 활성화 되는것 같다.
+4. branch를 삭제하지 않고 기존에 있던 branch에 들어가면 `This branch is 2 commits ahead, 1 commit behind forkTestRepo/testfork:main.` 이러한 메시지가 github에서 보인다.
+5. 따라서 fork를 했을 때 기존의 branch를 이어서 쓰는것은 좋지않아보인다... 아니면 다른 방법이 있을까?!
