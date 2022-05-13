@@ -16,7 +16,18 @@
 7. fetch를 통해 원본 repo의 변경사항을 미리 확인한다.
    : `git fetch upstream` -> `git checkout upstream/main`
 8. 변경된 사항이 없다면 나의 repo에서 원본 repo로 PR을 만든다.
+   : PR 후 사용했던 원격 branch를 github에서 삭제해줄 수 있다.
 9. 원본 repo에서 확인 후 merge 됐으면, 대부분 github에서 나의 repo에도 자동 merge 해준다.
-10. 로컬의 main 브랜치에 원격 저장소 내용을 pull 해온다.
-    : 이때 작업 branch에서 로컬 main branch로 checkout 하려면 작업 내역이 없어야한다. 즉, add나 commit을 해둬야한다는 것!
-11. 사용했던 branch를 삭제해준다.
+   (+) 나의 repo에 자동 merge가 되어 있지 않으면 Fetch upstream을 통해 반영해준다.
+10. 사용했던 branch를 삭제해준다.
+
+- 로컬의 경우
+  확인 `git branch` / 삭제 `git branch -d <브랜치명>`
+
+- 원격의 경우
+  확인 `git branch -r` / 삭제 `git push origin --delete <브랜치명>`
+
+* 원격 브랜치를 삭제할 경우 간혹가다 해당 브랜치가 없다고 한다. 그런 경우는, 8번에서 삭제한 것처럼 원격에서는 삭제됐지만 로컬에는 아직 반영이 안된 것.
+  따라서 `git fetch -p origin`을 통해 원격 정보를 로컬에 받아온다.
+
+11. 로컬의 main 브랜치에 원격 저장소 내용을 pull 해온다.
